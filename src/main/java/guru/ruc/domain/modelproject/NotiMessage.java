@@ -1,4 +1,4 @@
-package com.guru.ruc.orchestrator.domain;
+package guru.ruc.domain.modelproject;
 
 import java.util.List;
 

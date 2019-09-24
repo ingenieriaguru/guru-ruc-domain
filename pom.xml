@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>guru.ruc.domain</groupId>
-	<artifactId>domain-project</artifactId>
-	<version>0.0.1</version>
+	<artifactId>model-project</artifactId>
+	<version>1.0.0</version>
 	<name>domain-project</name>
 	<description>RUC Domain</description>
 
@@ -53,11 +53,35 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary RUC Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>guru.ruc.domain</groupId>
+				<artifactId>domain-project</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<message>Creating site for ${project.version}</message>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
