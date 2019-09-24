@@ -49,13 +49,21 @@ public class Websplanet implements Serializable {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("{");
-		sb.append("\"provider_id\": \"");
-		sb.append(provider_id);
-		sb.append("\", \"password\": \"");
-		sb.append(password);
-		sb.append("\", \"status\": \"");
-		sb.append(status);
-		sb.append("\"");
+		if (provider_id != null) {
+			sb.append("\"provider_id\": \"");
+			sb.append(provider_id);
+			sb.append("\", ");
+		}
+		if (password != null) {
+			sb.append("\"password\": \"");
+			sb.append(password);
+			sb.append("\", ");
+		}
+		if (status != null) {
+			sb.append("\"status\": \"");
+			sb.append(status);
+			sb.append("\"");
+		}
 		sb.append("}");
 		return sb.toString();
 	}

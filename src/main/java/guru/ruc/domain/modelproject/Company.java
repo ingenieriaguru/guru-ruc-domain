@@ -1,6 +1,7 @@
 package guru.ruc.domain.modelproject;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -268,70 +269,90 @@ public class Company extends AbstractAuditingEntity implements Serializable {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("{ \"company\": {");
-		sb.append("\"businessName\": \"");
-		sb.append(businessName);
-		sb.append("\", \"categories\": ");
-		sb.append("[");
-		for (int i = 0; i < categories.size(); i++) {
-			if (i == 0) {
-				sb.append("\"");
-				sb.append(categories.get(i));
-				sb.append("\"");
-			} else {
-				sb.append(", \"");
-				sb.append(categories.get(i));
-				sb.append("\"");
-			}
+		if (businessName != null) {
+			sb.append("\"businessName\": \"");
+			sb.append(businessName);
+			sb.append("\", ");
 		}
-		sb.append("]");
-		sb.append(", \"businessDescription\": \"");
-		sb.append(businessDescription);
-		sb.append("\", \"contactPhones\": ");
-		sb.append("[");
-		for (int i = 0; i < contactPhones.size(); i++) {
-			if (i == 0) {
-				sb.append("\"");
-				sb.append(contactPhones.get(i));
-				sb.append("\"");
-			} else {
-				sb.append(", \"");
-				sb.append(contactPhones.get(i));
-				sb.append("\"");
+		if (categories != null && !categories.equals(Collections.EMPTY_LIST)) {
+			sb.append("\"categories\": ");
+			sb.append("[");
+			for (int i = 0; i < categories.size(); i++) {
+				if (i == 0) {
+					sb.append("\"");
+					sb.append(categories.get(i));
+					sb.append("\"");
+				} else {
+					sb.append(", \"");
+					sb.append(categories.get(i));
+					sb.append("\"");
+				}
 			}
+			sb.append("], ");
 		}
-		sb.append("]");
-		sb.append(", \"emails\": ");
-		sb.append("[");
-		for (int i = 0; i < emails.size(); i++) {
-			if (i == 0) {
-				sb.append("\"");
-				sb.append(emails.get(i));
-				sb.append("\"");
-			} else {
-				sb.append(", \"");
-				sb.append(emails.get(i));
-				sb.append("\"");
+		if (businessDescription != null) {
+			sb.append("\"businessDescription\": \"");
+			sb.append(businessDescription);
+			sb.append("\", ");
+		}
+		if (contactPhones != null && !contactPhones.equals(Collections.EMPTY_LIST)) {
+			sb.append("\"contactPhones\": ");
+			sb.append("[");
+			for (int i = 0; i < contactPhones.size(); i++) {
+				if (i == 0) {
+					sb.append("\"");
+					sb.append(contactPhones.get(i));
+					sb.append("\"");
+				} else {
+					sb.append(", \"");
+					sb.append(contactPhones.get(i));
+					sb.append("\"");
+				}
 			}
+			sb.append("]");
+			sb.append(", ");
 		}
-		sb.append("]");
-		sb.append(", \"address\": ");
-		sb.append("{");
-		sb.append(address.toString());
-		sb.append("}");
-		sb.append(", \"products\": ");
-		for (Product product : products) {
+		if (emails != null && !contactPhones.equals(Collections.EMPTY_LIST)) {
+			sb.append("\"emails\": ");
+			sb.append("[");
+			for (int i = 0; i < emails.size(); i++) {
+				if (i == 0) {
+					sb.append("\"");
+					sb.append(emails.get(i));
+					sb.append("\"");
+				} else {
+					sb.append(", \"");
+					sb.append(emails.get(i));
+					sb.append("\"");
+				}
+			}
+			sb.append("], ");
+		}
+		if (address != null) {
+			sb.append("\"address\": ");
 			sb.append("{");
-			if (product instanceof Website) {
-				sb.append("\"domain\": \"");
-				sb.append(((Website) product).getDomain());
-				sb.append("\", \"subdomain\": \"");
-				sb.append(((Website) product).getSubdomain());
-				sb.append("\", \"websiteType\": \"");
-				sb.append(((Website) product).getWebsiteType());
-				sb.append("\", \"customAttibutes\": ");
-				sb.append(((Website) product).getCustomAttributes().toString());
+			sb.append(address.toString());
+			sb.append("}, ");
+
+		}
+		if (products != null && !products.equals(Collections.EMPTY_LIST)) {
+			sb.append("\"products\": ");
+			sb.append("[");
+			for (Product product : products) {
+				sb.append("{");
+				if (product instanceof Website) {
+					sb.append("\"domain\": \"");
+					sb.append(((Website) product).getDomain());
+					sb.append("\", \"subdomain\": \"");
+					sb.append(((Website) product).getSubdomain());
+					sb.append("\", \"websiteType\": \"");
+					sb.append(((Website) product).getWebsiteType());
+					sb.append("\", \"customAttributes\": ");
+					sb.append(((Website) product).getCustomAttributes().toString());
+				}
+				sb.append("}");
 			}
-			sb.append("}");
+			sb.append("]");
 		}
 		sb.append("}");
 		sb.append("}");

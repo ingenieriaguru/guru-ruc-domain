@@ -29,9 +29,9 @@ public class CompanyTest {
 		+ " DESTACARLO PARA CONSEGUIR MÁS CLIENTES, Y AUMENTAR TUS VENTAS.\", \"contactPhones\": [\""
 		+ "+5408006668888\"], \"emails\": [\"clientes@gurusoluciones.com.ar\"], \"address\": {\"province\""
 		+ ": 76, \"locality\": 16101, \"street\": \"Colectora Panamericana\", \"number\": 1804, \"floor\": 0, \"dept\""
-		+ ": \"\", \"zipCode\": \"1607\", \"lat\": \"-34.50239\", \"lng\": \"-58.54424\"},\"products\": [{\"domain\""
-		+ ": \"\",\"subdomain\": \"\",\"websiteType\": \"websplanet\",\"customAttributes\": {"
-		+ "\"provider_id\": \"\",\"password\": \"Guru\",\"status\": \"websplanet-not-created\"}}]}}";
+		+ ": \"\", \"zipCode\": \"1607\", \"lat\": \"-34.50239\", \"lng\": \"-58.54424\"}, \"products\": [{\"domain\""
+		+ ": \"\", \"subdomain\": \"\", \"websiteType\": \"websplanet\", \"customAttributes\": {"
+		+ "\"provider_id\": \"\", \"password\": \"Guru\", \"status\": \"websplanet-not-created\"}}]}}";
 		Company company = new Company();
 		company.setBusinessName("Guruland");
 		company.setCategories(new ArrayList<String>(Arrays.asList("cd14571b-78d0-4a3b-85bf-f1c8f3a5f3a7")));
@@ -47,8 +47,8 @@ public class CompanyTest {
 		address.setFloor(0);
 		address.setDept("");
 		address.setZipCode("1607");
-		address.setLat(-34.50239);
-		address.setLng(-58.54424);
+		address.setLat("-34.50239");
+		address.setLng("-58.54424");
 		company.setAddress(address);
 		List<Product> products = new ArrayList<Product>();
 		Website website = new Website();

@@ -44,10 +44,10 @@ public class Address {
 	private String zipCode;
 
 	@Column(name = "lat")
-	private Double lat;
+	private String lat;
 
 	@Column(name = "lng")
-	private Double lng;
+	private String lng;
 
 	public Long getId() {
 		return id;
@@ -121,44 +121,70 @@ public class Address {
 		this.zipCode = zipCode;
 	}
 
-	public Double getLat() {
+	public String getLat() {
 		return lat;
 	}
 
-	public void setLat(Double lat) {
+	public void setLat(String lat) {
 		this.lat = lat;
 	}
 
-	public Double getLng() {
+	public String getLng() {
 		return lng;
 	}
 
-	public void setLng(Double lng) {
+	public void setLng(String lng) {
 		this.lng = lng;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\"province\": ");
-		sb.append(province);
-		sb.append(", \"locality\": ");
-		sb.append(locality);
-		sb.append(", \"street\": \"");
-		sb.append(street);
-		sb.append("\", \"number\": ");
-		sb.append(number);
-		sb.append(", \"floor\": ");
-		sb.append(floor);
-		sb.append(", \"dept\": \"");
-		sb.append(dept);
-		sb.append("\", \"zipCode\": \"");
-		sb.append(zipCode);
-		sb.append("\", \"lat\": \"");
-		sb.append(lat);
-		sb.append("\", \"lng\": \"");
-		sb.append(lng);
-		sb.append("\"");
+		if (province != null) {
+			sb.append("\"province\": ");
+			sb.append(province);
+			sb.append(", ");
+		}
+		if (province != null) {
+			sb.append("\"locality\": ");
+			sb.append(locality);
+			sb.append(", ");
+		}
+		if (street != null) {
+			sb.append("\"street\": \"");
+			sb.append(street);
+			sb.append("\", ");
+		}
+		if (number != null) {
+			sb.append("\"number\": ");
+			sb.append(number);
+			sb.append(", ");
+		}
+		if (floor != null) {
+			sb.append("\"floor\": ");
+			sb.append(floor);
+			sb.append(", ");
+		}
+		if (dept != null) {
+			sb.append("\"dept\": \"");
+			sb.append(dept);
+			sb.append("\", ");
+		}
+		if (zipCode != null) {
+			sb.append("\"zipCode\": \"");
+			sb.append(zipCode);
+			sb.append("\", ");
+		}
+		if (lat != null) {
+			sb.append("\"lat\": \"");
+			sb.append(lat);
+			sb.append("\", ");
+		}
+		if (lng != null) {
+			sb.append("\"lng\": \"");
+			sb.append(lng);
+			sb.append("\"");
+		}
 		return sb.toString();
 	}
 
