@@ -1,43 +1,21 @@
 package guru.ruc.domain.modelproject;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+public class ImageDTO {
 
-@Entity
-@Table(name = "image")
-public class Image {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Long id;
 
-	@ManyToOne
-	@JoinColumn(name = "company_id")
-	private Company company;
+	private CompanyDTO company;
 
-	@Column(name = "s3route")
 	private String s3route;
 
-	@Column(name = "title")
 	private String title;
 
-	@Column(name = "extension")
 	private String extension;
 
-	@Column(name = "uuid")
 	private String uuid;
 
-	@Column(name = "server")
 	private String server;
 
-	@Column(name = "bucket")
 	private String bucket;
 
 	public Long getId() {
@@ -48,11 +26,11 @@ public class Image {
 		this.id = id;
 	}
 
-	public Company getCompany() {
+	public CompanyDTO getCompany() {
 		return company;
 	}
 
-	public void setCompany(Company company) {
+	public void setCompany(CompanyDTO company) {
 		this.company = company;
 	}
 

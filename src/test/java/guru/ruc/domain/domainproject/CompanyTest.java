@@ -9,16 +9,16 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import guru.ruc.domain.modelproject.Address;
-import guru.ruc.domain.modelproject.Company;
+import guru.ruc.domain.modelproject.AddressDTO;
+import guru.ruc.domain.modelproject.CompanyDTO;
 import guru.ruc.domain.modelproject.Constants;
-import guru.ruc.domain.modelproject.Product;
-import guru.ruc.domain.modelproject.Website;
-import guru.ruc.domain.modelproject.Websplanet;
+import guru.ruc.domain.modelproject.ProductDTO;
+import guru.ruc.domain.modelproject.WebsiteDTO;
+import guru.ruc.domain.modelproject.WebsplanetDTO;
 import org.junit.Assert;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes= {Company.class, Address.class, Website.class, Websplanet.class})
+@SpringBootTest(classes= {CompanyDTO.class, AddressDTO.class, WebsiteDTO.class, WebsplanetDTO.class})
 public class CompanyTest {
 
 	@Test
@@ -32,14 +32,14 @@ public class CompanyTest {
 		+ ": \"\", \"zipCode\": \"1607\", \"lat\": \"-34.50239\", \"lng\": \"-58.54424\"}, \"products\": [{\"domain\""
 		+ ": \"\", \"subdomain\": \"\", \"websiteType\": \"websplanet\", \"customAttributes\": {"
 		+ "\"provider_id\": \"\", \"password\": \"Guru\", \"status\": \"websplanet-not-created\"}}]}}";
-		Company company = new Company();
+		CompanyDTO company = new CompanyDTO();
 		company.setBusinessName("Guruland");
 		company.setCategories(new ArrayList<String>(Arrays.asList("cd14571b-78d0-4a3b-85bf-f1c8f3a5f3a7")));
 		company.setBusinessDescription("OFRECEMOS SOLUCIONES PARA MEJORAR LA PRESENCIA DE TU NEGOCIO EN INTERNET, "
 		+ "DESTACARLO PARA CONSEGUIR MÁS CLIENTES, Y AUMENTAR TUS VENTAS.");
 		company.setContactPhones(new ArrayList<String>(Arrays.asList("+5408006668888")));
 		company.setEmails(new ArrayList<String>(Arrays.asList("clientes@gurusoluciones.com.ar")));
-		Address address = new Address();
+		AddressDTO address = new AddressDTO();
 		address.setProvince(76);
 		address.setLocality(16101);
 		address.setStreet("Colectora Panamericana");
@@ -50,12 +50,12 @@ public class CompanyTest {
 		address.setLat("-34.50239");
 		address.setLng("-58.54424");
 		company.setAddress(address);
-		List<Product> products = new ArrayList<Product>();
-		Website website = new Website();
+		List<ProductDTO> products = new ArrayList<ProductDTO>();
+		WebsiteDTO website = new WebsiteDTO();
 		website.setDomain("");
 		website.setSubdomain("");
 		website.setWebsiteType("websplanet");
-		Websplanet customAttributes = new Websplanet();
+		WebsplanetDTO customAttributes = new WebsplanetDTO();
 		customAttributes.setProvider_id("");
 		customAttributes.setPassword("Guru");
 		customAttributes.setStatus(Constants.NOT_CREATED);

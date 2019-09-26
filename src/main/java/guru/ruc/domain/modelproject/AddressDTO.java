@@ -1,52 +1,27 @@
 package guru.ruc.domain.modelproject;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+public class AddressDTO {
 
-@Entity
-@Table(name = "direccion")
-public class Address {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Long id;
 
-	@OneToOne(mappedBy = "address")
-	@JoinColumn(name = "company_id")
-	private Company company;
+	private CompanyDTO company;
 
-	@Column(name = "province")
 	private Integer province;
 
-	@Column(name = "locality")
 	private Integer locality;
 
-	@Column(name = "street")
 	private String street;
 
-	@Column(name = "number")
 	private Integer number;
 
-	@Column(name = "floor")
 	private Integer floor;
 
-	@Column(name = "dept")
 	private String dept;
 
-	@Column(name = "zip_code")
 	private String zipCode;
 
-	@Column(name = "lat")
 	private String lat;
 
-	@Column(name = "lng")
 	private String lng;
 
 	public Long getId() {
@@ -57,11 +32,11 @@ public class Address {
 		this.id = id;
 	}
 
-	public Company getCompany() {
+	public CompanyDTO getCompany() {
 		return company;
 	}
 
-	public void setCompany(Company company) {
+	public void setCompany(CompanyDTO company) {
 		this.company = company;
 	}
 

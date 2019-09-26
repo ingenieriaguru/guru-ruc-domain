@@ -2,24 +2,21 @@ package guru.ruc.domain.modelproject;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-
-public class Websplanet implements Serializable {
+public class WebsplanetDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Websplanet() {
+	public WebsplanetDTO() {
 		super();
 	}
 
-	@Column(name = "provider_id")
 	private String provider_id;
 
-	@Column(name = "password")
 	private String password;
 
-	@Column(name = "status")
 	private String status;
+
+	private String message;
 
 	public String getProvider_id() {
 		return provider_id;
@@ -45,6 +42,14 @@ public class Websplanet implements Serializable {
 		this.status = status;
 	}
 
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -62,6 +67,11 @@ public class Websplanet implements Serializable {
 		if (status != null) {
 			sb.append("\"status\": \"");
 			sb.append(status);
+			sb.append("\"");
+		}
+		if (message != null) {
+			sb.append("\"mssage: \"");
+			sb.append(message);
 			sb.append("\"");
 		}
 		sb.append("}");

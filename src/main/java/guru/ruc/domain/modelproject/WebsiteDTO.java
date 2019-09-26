@@ -2,36 +2,24 @@ package guru.ruc.domain.modelproject;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-
-import org.hibernate.annotations.Type;
-
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-@Entity(name = "website")
 @JsonTypeName("website")
-public class Website extends Product implements Serializable {
+public class WebsiteDTO extends ProductDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Website() {
+	public WebsiteDTO() {
 		super();
 	}
 
-	@Column(name = "domain")
 	private String domain;
 
-	@Column(name = "subdomain")
 	private String subdomain;
 
-	@Column(name = "websiteType")
 	private String websiteType;
 
-	@Type(type = "json")
-	@Column(columnDefinition = "json",
-	name = "custom_attributes")
-	private Websplanet customAttributes;
+	private WebsplanetDTO customAttributes;
 
 	public String getDomain() {
 		return domain;
@@ -57,11 +45,11 @@ public class Website extends Product implements Serializable {
 		this.websiteType = websiteType;
 	}
 
-	public Websplanet getCustomAttributes() {
+	public WebsplanetDTO getCustomAttributes() {
 		return customAttributes;
 	}
 
-	public void setCustomAttributes(Websplanet customAttributes) {
+	public void setCustomAttributes(WebsplanetDTO customAttributes) {
 		this.customAttributes = customAttributes;
 	}
 

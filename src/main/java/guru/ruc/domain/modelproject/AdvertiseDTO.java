@@ -2,30 +2,19 @@ package guru.ruc.domain.modelproject;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-@Entity(name = "advertise")
 @JsonTypeName("advertise")
-public class Advertise extends Product implements Serializable {
+public class AdvertiseDTO extends ProductDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Advertise() {
+	public AdvertiseDTO() {
 		super();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "advertise")
 	private Integer edithorAdvertiseId;
 
 	public Long getId() {
@@ -61,7 +50,7 @@ public class Advertise extends Product implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Advertise other = (Advertise) obj;
+		AdvertiseDTO other = (AdvertiseDTO) obj;
 		//		} else if (!email.equals(other.email))
 		//			return false;
 		//		if (direccion == null) {

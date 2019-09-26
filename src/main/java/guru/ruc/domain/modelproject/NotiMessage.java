@@ -4,23 +4,23 @@ import java.util.List;
 
 public class NotiMessage {
 
-	Company company;
+	CompanyDTO company;
 
-	List<Product> products;
+	List<ProductDTO> products;
 
-	public Company getCompany() {
+	public CompanyDTO getCompany() {
 		return company;
 	}
 
-	public void setCompany(Company company) {
+	public void setCompany(CompanyDTO company) {
 		this.company = company;
 	}
 
-	public List<Product> getProducts() {
+	public List<ProductDTO> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Product> products) {
+	public void setProducts(List<ProductDTO> products) {
 		this.products = products;
 	}
 

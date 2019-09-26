@@ -5,96 +5,52 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
-@Table(name = "company")
-public class Company extends AbstractAuditingEntity implements Serializable {
+public class CompanyDTO extends AbstractAuditingEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Company() {
+	public CompanyDTO() {
 		super();
 	}
 
-	@Id
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID",
-	strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "id",
-	updatable = false,
-	nullable = false)
-	@Type(type = "uuid-char")
 	private UUID id;
 
-	@Column(name = "account_id")
 	@JsonProperty("account-id")
 	private Long accountId;
 
-	@OneToMany(cascade = { CascadeType.ALL })
-	@Column(name = "user")
-	private List<User> users;
+	private List<UserDTO> users;
 
-	@Column(name = "business_name")
 	private String businessName;
 
-	@Column(name = "cuit")
 	private String cuit;
 
-	@Column(name = "webUrl")
 	private String webUrl;
 
-	@ElementCollection
-	@Column(name = "categories")
 	private List<String> categories;
 
-	@OneToOne(cascade = { CascadeType.ALL })
-	private Image companyLogo;
+	private ImageDTO companyLogo;
 
-	@Column(name = "business_description")
 	private String businessDescription;
 
-	@ElementCollection
-	@Column(name = "contact_phones")
 	private List<String> contactPhones;
 
-	@Column(name = "whatsapp")
 	private String whatsapp;
 
-	@Column(name = "facebook")
 	private String facebook;
 
-	@Column(name = "instagram")
 	private String instagram;
 
-	@Column(name = "twitter")
 	private String twitter;
 
-	@ElementCollection
-	@Column(name = "emails")
 	private List<String> emails;
 
-	@OneToOne(cascade = { CascadeType.ALL })
-	private Address address;
+	private AddressDTO address;
 
-	@OneToMany(cascade = { CascadeType.ALL })
-	private List<Image> images;
+	private List<ImageDTO> images;
 
-	@OneToMany(cascade = { CascadeType.ALL })
-	private List<Product> products;
+	private List<ProductDTO> products;
 
 	public UUID getId() {
 		return id;
@@ -112,11 +68,11 @@ public class Company extends AbstractAuditingEntity implements Serializable {
 		this.accountId = accountId;
 	}
 
-	public List<User> getUsers() {
+	public List<UserDTO> getUsers() {
 		return users;
 	}
 
-	public void setUsers(List<User> users) {
+	public void setUsers(List<UserDTO> users) {
 		this.users = users;
 	}
 
@@ -152,11 +108,11 @@ public class Company extends AbstractAuditingEntity implements Serializable {
 		this.categories = categories;
 	}
 
-	public Image getCompanyLogo() {
+	public ImageDTO getCompanyLogo() {
 		return companyLogo;
 	}
 
-	public void setCompanyLogo(Image companyLogo) {
+	public void setCompanyLogo(ImageDTO companyLogo) {
 		this.companyLogo = companyLogo;
 	}
 
@@ -216,27 +172,27 @@ public class Company extends AbstractAuditingEntity implements Serializable {
 		this.emails = emails;
 	}
 
-	public Address getAddress() {
+	public AddressDTO getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(AddressDTO address) {
 		this.address = address;
 	}
 
-	public List<Image> getImages() {
+	public List<ImageDTO> getImages() {
 		return images;
 	}
 
-	public void setImages(List<Image> images) {
+	public void setImages(List<ImageDTO> images) {
 		this.images = images;
 	}
 
-	public List<Product> getProducts() {
+	public List<ProductDTO> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Product> products) {
+	public void setProducts(List<ProductDTO> products) {
 		this.products = products;
 	}
 
@@ -256,7 +212,7 @@ public class Company extends AbstractAuditingEntity implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Company other = (Company) obj;
+		CompanyDTO other = (CompanyDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -338,17 +294,17 @@ public class Company extends AbstractAuditingEntity implements Serializable {
 		if (products != null && !products.equals(Collections.EMPTY_LIST)) {
 			sb.append("\"products\": ");
 			sb.append("[");
-			for (Product product : products) {
+			for (ProductDTO product : products) {
 				sb.append("{");
-				if (product instanceof Website) {
+				if (product instanceof WebsiteDTO) {
 					sb.append("\"domain\": \"");
-					sb.append(((Website) product).getDomain());
+					sb.append(((WebsiteDTO) product).getDomain());
 					sb.append("\", \"subdomain\": \"");
-					sb.append(((Website) product).getSubdomain());
+					sb.append(((WebsiteDTO) product).getSubdomain());
 					sb.append("\", \"websiteType\": \"");
-					sb.append(((Website) product).getWebsiteType());
+					sb.append(((WebsiteDTO) product).getWebsiteType());
 					sb.append("\", \"customAttributes\": ");
-					sb.append(((Website) product).getCustomAttributes().toString());
+					sb.append(((WebsiteDTO) product).getCustomAttributes().toString());
 				}
 				sb.append("}");
 			}
