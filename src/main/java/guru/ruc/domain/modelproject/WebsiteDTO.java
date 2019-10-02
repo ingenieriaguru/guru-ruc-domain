@@ -45,12 +45,12 @@ public class WebsiteDTO extends ProductDTO implements Serializable {
 		this.websiteType = websiteType;
 	}
 
-	public WebsplanetDTO getCustomAttributes() {
+	public WebsplanetDTO getWebsplanetAttributes() {
 		return websplanetAttributes;
 	}
 
-	public void setCustomAttributes(WebsplanetDTO customAttributes) {
-		this.websplanetAttributes = customAttributes;
+	public void setWebsplanetAttributes(WebsplanetDTO websplanetAttributes) {
+		this.websplanetAttributes = websplanetAttributes;
 	}
 
 }
