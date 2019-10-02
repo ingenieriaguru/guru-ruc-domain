@@ -1,14 +1,16 @@
 package guru.ruc.domain.modelproject;
 
+import java.util.UUID;
+
 public class BaseProductsEntity {
 
-	private Long id;
+	private UUID id;
 
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 

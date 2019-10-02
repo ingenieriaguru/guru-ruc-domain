@@ -19,7 +19,7 @@ public class WebsiteDTO extends ProductDTO implements Serializable {
 
 	private String websiteType;
 
-	private WebsplanetDTO customAttributes;
+	private WebsplanetDTO websplanetAttributes;
 
 	public String getDomain() {
 		return domain;
@@ -46,11 +46,11 @@ public class WebsiteDTO extends ProductDTO implements Serializable {
 	}
 
 	public WebsplanetDTO getCustomAttributes() {
-		return customAttributes;
+		return websplanetAttributes;
 	}
 
 	public void setCustomAttributes(WebsplanetDTO customAttributes) {
-		this.customAttributes = customAttributes;
+		this.websplanetAttributes = customAttributes;
 	}
 
 }

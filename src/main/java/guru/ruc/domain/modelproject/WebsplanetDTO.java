@@ -50,32 +50,4 @@ public class WebsplanetDTO implements Serializable {
 		this.message = message;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("{");
-		if (provider_id != null) {
-			sb.append("\"provider_id\": \"");
-			sb.append(provider_id);
-			sb.append("\", ");
-		}
-		if (password != null) {
-			sb.append("\"password\": \"");
-			sb.append(password);
-			sb.append("\", ");
-		}
-		if (status != null) {
-			sb.append("\"status\": \"");
-			sb.append(status);
-			sb.append("\"");
-		}
-		if (message != null) {
-			sb.append("\"mssage: \"");
-			sb.append(message);
-			sb.append("\"");
-		}
-		sb.append("}");
-		return sb.toString();
-	}
-
 }

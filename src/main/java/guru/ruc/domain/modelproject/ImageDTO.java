@@ -1,10 +1,15 @@
 package guru.ruc.domain.modelproject;
 
+import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class ImageDTO {
 
-	private Long id;
-
+	@JsonIgnore
 	private CompanyDTO company;
+
+	private UUID id;
 
 	private String s3route;
 
@@ -12,19 +17,9 @@ public class ImageDTO {
 
 	private String extension;
 
-	private String uuid;
-
 	private String server;
 
 	private String bucket;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public CompanyDTO getCompany() {
 		return company;
@@ -34,12 +29,20 @@ public class ImageDTO {
 		this.company = company;
 	}
 
-	public void setS3route(String s3route) {
-		this.s3route = s3route;
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
 	}
 
 	public String getS3route() {
 		return s3route;
+	}
+
+	public void setS3route(String s3route) {
+		this.s3route = s3route;
 	}
 
 	public String getTitle() {
@@ -56,14 +59,6 @@ public class ImageDTO {
 
 	public void setExtension(String extension) {
 		this.extension = extension;
-	}
-
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
 	}
 
 	public String getServer() {

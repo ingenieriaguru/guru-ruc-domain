@@ -1,21 +1,33 @@
 package guru.ruc.domain.modelproject;
 
+import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserDTO {
 
-	private Long id;
+	@JsonIgnore
+	private CompanyDTO company;
+
+	private UUID id;
 
 	@JsonProperty("nombreDeUsuario")
 	private String userName;
 
-	private CompanyDTO company;
+	public CompanyDTO getCompany() {
+		return company;
+	}
 
-	public Long getId() {
+	public void setCompany(CompanyDTO company) {
+		this.company = company;
+	}
+
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
@@ -25,14 +37,6 @@ public class UserDTO {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-
-	public CompanyDTO getCompany() {
-		return company;
-	}
-
-	public void setCompany(CompanyDTO company) {
-		this.company = company;
 	}
 
 }

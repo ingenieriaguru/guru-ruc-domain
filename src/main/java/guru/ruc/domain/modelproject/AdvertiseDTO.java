@@ -13,17 +13,7 @@ public class AdvertiseDTO extends ProductDTO implements Serializable {
 		super();
 	}
 
-	private Long id;
-
 	private Integer edithorAdvertiseId;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Integer getEdithorAdvertiseId() {
 		return edithorAdvertiseId;
@@ -38,7 +28,7 @@ public class AdvertiseDTO extends ProductDTO implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((edithorAdvertiseId == null) ? 0 : edithorAdvertiseId.hashCode());
-		result = prime * result + ((this.getCompany().getBusinessName() == null) ? 0 : this.getCompany().getBusinessName().hashCode());
+		result = prime * result + ((this.getCompany().getCompanyData().getBusinessName() == null) ? 0 : this.getCompany().getCompanyData().getBusinessName().hashCode());
 		return result;
 	}
 
