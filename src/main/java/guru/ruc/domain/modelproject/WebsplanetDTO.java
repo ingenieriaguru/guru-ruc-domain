@@ -3,7 +3,7 @@ package guru.ruc.domain.modelproject;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 @JsonTypeName("websplanet")
-public class WebsplanetDTO {
+public class WebsplanetDTO extends WebsiteDataDTO {
 
 	public WebsplanetDTO() {
 		super();
