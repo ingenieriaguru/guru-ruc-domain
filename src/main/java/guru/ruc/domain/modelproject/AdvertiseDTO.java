@@ -1,6 +1,7 @@
 package guru.ruc.domain.modelproject;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -15,12 +16,22 @@ public class AdvertiseDTO extends ProductDTO implements Serializable {
 
 	private Integer edithorAdvertiseId;
 
+	private UUID provider_id;
+
 	public Integer getEdithorAdvertiseId() {
 		return edithorAdvertiseId;
 	}
 
 	public void setEdithorAdvertiseId(Integer edithorAdvertiseId) {
 		this.edithorAdvertiseId = edithorAdvertiseId;
+	}
+
+	public UUID getProvider_id() {
+		return provider_id;
+	}
+
+	public void setProvider_id(UUID provider_id) {
+		this.provider_id = provider_id;
 	}
 
 	@Override

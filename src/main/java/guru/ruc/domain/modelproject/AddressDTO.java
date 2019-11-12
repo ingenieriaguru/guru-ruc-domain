@@ -4,7 +4,9 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class AddressDTO {
+public class AddressDTO extends AbstractAuditingEntity {
+
+	private static final long serialVersionUID = 1L;
 
 	@JsonIgnore
 	private CompanyDTO company;

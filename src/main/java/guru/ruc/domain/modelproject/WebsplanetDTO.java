@@ -1,10 +1,9 @@
 package guru.ruc.domain.modelproject;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
-public class WebsplanetDTO implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+@JsonTypeName("websplanet")
+public class WebsplanetDTO {
 
 	public WebsplanetDTO() {
 		super();

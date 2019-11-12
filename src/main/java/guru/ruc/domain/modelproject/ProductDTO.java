@@ -14,6 +14,8 @@ name = "website"),
 		name = "advertise") })
 public class ProductDTO extends BaseProductsEntity {
 
+	private static final long serialVersionUID = 1L;
+
 	@JsonIgnore
 	private CompanyDTO company;
 

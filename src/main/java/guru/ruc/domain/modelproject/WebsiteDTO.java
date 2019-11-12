@@ -13,44 +13,14 @@ public class WebsiteDTO extends ProductDTO implements Serializable {
 		super();
 	}
 
-	private String domain;
+	private WebsiteDataDTO websiteData;
 
-	private String subdomain;
-
-	private String websiteType;
-
-	private WebsplanetDTO websplanetAttributes;
-
-	public String getDomain() {
-		return domain;
+	public WebsiteDataDTO getWebsiteData() {
+		return websiteData;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-	public String getSubdomain() {
-		return subdomain;
-	}
-
-	public void setSubdomain(String subdomain) {
-		this.subdomain = subdomain;
-	}
-
-	public String getWebsiteType() {
-		return websiteType;
-	}
-
-	public void setWebsiteType(String websiteType) {
-		this.websiteType = websiteType;
-	}
-
-	public WebsplanetDTO getWebsplanetAttributes() {
-		return websplanetAttributes;
-	}
-
-	public void setWebsplanetAttributes(WebsplanetDTO websplanetAttributes) {
-		this.websplanetAttributes = websplanetAttributes;
+	public void setWebsiteData(WebsiteDataDTO websiteData) {
+		this.websiteData = websiteData;
 	}
 
 }

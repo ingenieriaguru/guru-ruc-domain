@@ -2,13 +2,9 @@ package guru.ruc.domain.modelproject;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CompanyDataDTO {
-
-	@JsonIgnore
-	private CompanyDTO company;
 
 	@JsonProperty("account-id")
 	private Long accountId;
@@ -38,14 +34,6 @@ public class CompanyDataDTO {
 	private List<String> emails;
 
 	private List<ImageDTO> images;
-
-	public CompanyDTO getCompany() {
-		return company;
-	}
-
-	public void setCompany(CompanyDTO company) {
-		this.company = company;
-	}
 
 	public Long getAccountId() {
 		return accountId;
