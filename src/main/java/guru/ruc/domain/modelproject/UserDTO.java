@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserDTO {
 
@@ -13,7 +12,6 @@ public class UserDTO {
 
 	private UUID id;
 
-	@JsonProperty("nombreDeUsuario")
 	private String userName;
 
 	private Person person;
