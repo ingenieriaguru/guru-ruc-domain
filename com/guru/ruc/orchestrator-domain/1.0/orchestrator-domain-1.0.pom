@@ -8,9 +8,7 @@
 		<artifactId>orchestrator-pom</artifactId>
 		<version>1.0</version>
 	</parent>
-	<groupId>com.guru.ruc</groupId>
 	<artifactId>orchestrator-domain</artifactId>
-	<version>1.0</version>
 	<name>Domain</name>
 	<description>Dominio de clases que se comparten entre distintos proyectos</description>
 
