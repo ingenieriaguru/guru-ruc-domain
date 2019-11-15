@@ -52,7 +52,7 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
-			<url>file://${project.build.directory}/mvn-repo-or</url>
+			<url>file://${user.dir}/mvn-repo-or</url>
 		</repository>
 	</distributionManagement>
 	<build>
@@ -60,7 +60,7 @@
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<configuration>
-					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo-or</altDeploymentRepository>
+					<altDeploymentRepository>internal.repo::default::file://${user.dir}/mvn-repo-or</altDeploymentRepository>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -70,23 +70,20 @@
 				<configuration>
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-					<outputDirectory>${project.build.directory}/mvn-repo-or</outputDirectory> <!-- matches distribution management repository url above -->
+					<outputDirectory>${user.dir}/mvn-repo-or</outputDirectory> <!-- matches distribution management repository url above -->
 					<branch>refs/heads/mvn-repo-or</branch>                       <!-- remote branch name -->
-					<includes>
-						<include>**/*</include>
-					</includes>
+					<includes><include>**/*</include></includes>
 					<repositoryName>guru-ruc-domain</repositoryName>      <!-- github repo name -->
-					<repositoryOwner>dieguitux</repositoryOwner>    <!-- github username -->
+					<repositoryOwner>dieguitux</repositoryOwner>    <!-- github username  -->
 				</configuration>
 				<executions>
-					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
-						'deploy' phase -->
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>deploy</phase>
-					</execution>
+				<!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+				<execution>
+					<goals>
+					<goal>site</goal>
+					</goals>
+					<phase>deploy</phase>
+				</execution>
 				</executions>
 			</plugin>
 		</plugins>
