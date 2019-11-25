@@ -7,9 +7,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
 include = JsonTypeInfo.As.PROPERTY,
 property = "type")
-@JsonSubTypes({ @Type(value = WebsplanetDTO.class,
-name = "websplanet") })
+@JsonSubTypes(@Type(value = WebsplanetDTO.class,
+name = "websplanet"))
 public class WebsiteDataDTO {
+
+	public WebsiteDataDTO() {
+
+	}
 
 	private String domain;
 

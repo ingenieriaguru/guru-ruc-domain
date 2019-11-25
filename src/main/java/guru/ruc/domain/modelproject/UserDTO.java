@@ -14,7 +14,7 @@ public class UserDTO {
 
 	private String userName;
 
-	private Person person;
+	private PersonDTO person;
 
 	public List<CompanyDTO> getCompany() {
 		return company;
@@ -40,11 +40,11 @@ public class UserDTO {
 		this.userName = userName;
 	}
 
-	public Person getPerson() {
+	public PersonDTO getPerson() {
 		return person;
 	}
 
-	public void setPerson(Person person) {
+	public void setPerson(PersonDTO person) {
 		this.person = person;
 	}
 

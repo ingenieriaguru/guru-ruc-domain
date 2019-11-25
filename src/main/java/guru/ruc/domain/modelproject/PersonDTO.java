@@ -3,12 +3,15 @@ package guru.ruc.domain.modelproject;
 import java.util.List;
 import java.util.UUID;
 
-public class Person extends AbstractAuditingEntity {
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+public class PersonDTO extends AbstractAuditingEntity {
 
 	private static final long serialVersionUID = 1L;
 
 	private UUID id;
 
+	@JsonIgnore
 	private List<UserDTO> users;
 
 	private String name;
